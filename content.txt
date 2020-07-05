@@ -1,0 +1,7 @@
+
+	<li><!-- a href="https://www.adm.gov.it/portale/documents/20182/2826878/xsd+-+DAS+elettronico_27112019.zip/bc5ee2a1-821d-4955-b485-7129425a156c" -->xsd - DAS elettronico<!-- /a --> (aggiornati al 27/11/2019)</li>
+	<li><a href="/portale/documents/20182/2826878/Tracciati+-+DAS+elettronico_26052020.zip/f2435469-31a2-425c-a0ec-b5f94761b242">Tracciati -&#xA0;DAS elettronico</a> (aggiornati al 26/05/2020)</li>
+	<li><!-- a href="/portale/documents/20182/2826878/Tabelle.zip/465c6b1b-69b0-450f-9323-45a4ab931ade" -->Tabelle di riferimento<!--/a--></li>
+	<li><!--a href="https://www.adm.gov.it/portale/documents/20182/2826878/Tabella+Codici+Errore+-+Segnalazione.pdf/74a65f67-d388-4df9-91e0-07df84509509"-->Tabella Codici Errore -&#xA0;Segnalazione<!--/a--></li>
+	<li><!--a href="https://www.adm.gov.it/portale/documents/20182/2826878/Manuale+operativo+DAS_27112019.pdf/fcaac39f-ec62-4bdc-808a-d33a6236c416"-->Manuale operativo DAS<!--/a-->- aggiornato al 27/11/2019 a seguito dell&apos;introduzione del nuovo stato 189 per esito positivo senza pdf</li>
+	<li><!--a href="https://www.adm.gov.it/portale/documents/20182/2826878/WSDL+DAS+elettronico.zip/a3f9507f-6f26-4b33-97f7-b9d71512a815"-->WSDL DAS elettronico<!--/a--></li>
