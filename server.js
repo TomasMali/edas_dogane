@@ -7,6 +7,9 @@ const readline = require('readline');
 const TelegramBot = require('node-telegram-bot-api');
 //E-das Token
 const token = '1294134868:AAG9xJj92qzZMh_RSuU9aotkSxtSw7HTDns'
+
+// 676793933:AAFSqroVLFsRsYU1nk12-gmVWrYprDN2q-I     test2tomas
+// 1294134868:AAG9xJj92qzZMh_RSuU9aotkSxtSw7HTDns     edas_dogane
 const bot = new TelegramBot(token, { polling: true });
 exports.bot = bot;
 
@@ -61,7 +64,7 @@ bot.on('message', (msg) => {
             };
             console.log('Scraping Done...');
         });
-            }
+    }
     else {
         if (msg.text.toString() != "/start")
             bot.sendMessage(msg.chat.id, "Commando non riconosciuto!")
@@ -72,6 +75,7 @@ bot.on('message', (msg) => {
 
 /**
  * Crontab Job Scheduler
+ * Ogni 20 minuti, dalle 8alle20, ogni settima, ogni mese, da lunedi a venerdi
  */
 cron.schedule('*/20 8-20 * * 1-5', () => {
 
@@ -106,7 +110,49 @@ cron.schedule('*/20 8-20 * * 1-5', () => {
             bot.sendMessage(145645559, "Controlla il Link delle Dogane")
     })
 
+
+//###########################################################################################################à
+
+
+request('https://www.adm.gov.it/portale/en/das-elettronico', (error, response, html) => {
+    if (!error && response.statusCode == 200) {
+        const $ = cheerio.load(html);
+
+        let main = $('.journal-content-article')
+
+        const home_content = fs.readFileSync('CONTAINER//home_content.txt').toString()
+
+        // se ci sono modifiche
+        if (home_content.replace(/\s/g, '') !== main.html().replace(/\s/g, '')) {
+            // Send bradcast
+            var lineReader = readline.createInterface({
+                input: require('fs').createReadStream('users.txt')
+            });
+            lineReader.on('line', function (line) {
+                if (line !== "")
+                    bot.sendMessage(line, main.text())
+            });
+
+            // Aggiorno il file 
+            fs.writeFile('CONTAINER//home_content.txt', main.html().replace(/\s/g, ''), 'utf-8', function (err) {
+                if (err) throw err;
+                console.log('filelistAsync complete');
+            });
+        }
+        //     console.log(main.html().replace(/\s/g, ''))
+    }
+    else
+        bot.sendMessage(145645559, "Controlla il Link delle Dogane")
+    console.log('Scraping Done...');
 });
+
+
+
+
+
+
+});
+
 
 
 
