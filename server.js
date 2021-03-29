@@ -7,7 +7,7 @@ const readline = require('readline');
 const TelegramBot = require('node-telegram-bot-api');
 //E-das Token
 const token = '1294134868:AAG9xJj92qzZMh_RSuU9aotkSxtSw7HTDns'
-
+//Toams_prova_bot   1748123452:AAE2E9gCJWoeXyrUweYF6XM3m7jTJiOUVVg
 // 676793933:AAFSqroVLFsRsYU1nk12-gmVWrYprDN2q-I     test2tomas
 // 1294134868:AAG9xJj92qzZMh_RSuU9aotkSxtSw7HTDns     edas_dogane
 const bot = new TelegramBot(token, { polling: true });
@@ -73,19 +73,24 @@ bot.on('message', (msg) => {
 })
 
 
+
+
 /**
  * Crontab Job Scheduler
  * Ogni 20 minuti, dalle 8alle20, ogni settima, ogni mese, da lunedi a venerdi
  */
 cron.schedule('*/20 8-20 * * 1-5', () => {
 
-    console.log('running a task 5 minutes');
+    console.log('running a task every 20 minutes');
+
 
     request('https://www.adm.gov.it/portale/dogane/operatore/servizi-online/servizio-telematico-doganale-e.d.i./web-service/webservice-ambienteprova#sez-daselettronico', (error, response, html) => {
         if (!error && response.statusCode == 200) {
 
             const $ = cheerio.load(html);
-            let main = $('ul').eq(5)
+            let main = $('ul').eq(4)
+
+            // console.log( main.html())
 
             const fileContents = fs.readFileSync('content.txt').toString()
             // se ci sono modifiche
@@ -109,6 +114,39 @@ cron.schedule('*/20 8-20 * * 1-5', () => {
         else
             bot.sendMessage(145645559, "Controlla il Link delle Dogane")
     })
+
+    
+
+
+    request('https://www.adm.gov.it/portale/dogane/operatore/accise/telematizzazione-delle-accise/settore-prodotti-energetici/tabelle-di-riferimento', (error, response, html) => {
+    if (!error && response.statusCode == 200) {
+        const $ = cheerio.load(html);
+        let main = $('.journal-content-article')
+       //  console.log( main.html().replace(/\s/g, ''))
+         const fileContents = fs.readFileSync('tabella_energetici.txt').toString()
+         // se ci sono modifiche
+         if (fileContents.replace(/\s/g, '') !== main.html().replace(/\s/g, '')) {
+             // Send bradcast
+             var lineReader = readline.createInterface({
+                 input: require('fs').createReadStream('users.txt')
+             });
+             lineReader.on('line', function (line) {
+                 if (line !== "")
+                     bot.sendMessage(line, 'https://www.adm.gov.it/portale/dogane/operatore/accise/telematizzazione-delle-accise/settore-prodotti-energetici/tabelle-di-riferimento')
+             });
+
+             // Aggiorno il file 
+             fs.writeFile('tabella_energetici.txt', main.html().replace(/\s/g, ''), 'utf-8', function (err) {
+                 if (err) throw err;
+                 console.log('filelistAsync complete');
+             });
+         }
+
+    }
+    else
+        bot.sendMessage(145645559, "Controlla il Link delle Dogane")
+})
+
 
 
 //###########################################################################################################à

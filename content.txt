@@ -1,4 +1,7 @@
 
-	<li><a href="/portale/documents/20182/2826878/xsd-DAA+elettronico.zip/e9ce476b-49d7-4c8e-9106-5efa51025871">Gli schemi (xsd) dei messaggi - DAA elettronico - zip </a>- (aggiornati al 07/02/2020)</li>
-	<li><a href="/portale/documents/20182/1289409/20200204-ManualeWS-prova.pdf/236fe087-69ea-4530-bfbe-9caff1ecaeb9">Manuale operativo - DAA elettronico</a></li>
-	<li><a href="/portale/documents/20182/1289409/20151022-Prova-DAA.wsdl/18140172-dbf4-46ae-a9fe-ddbc7f6b2b74">wsdl - DAA elettronico - wsdl</a></li>
+	<li><a href="/portale/documents/20182/6112697/DAS_Tracciati_20201216.zip/a662bbff-695e-481c-84fe-a3d87753dde5">DASTracciati_20200723</a></li>
+	<li><a href="/portale/documents/20182/4905842/wsdl.zip/17bf2db5-67ed-4207-9150-a0a338aa8daf">wsdl</a></li>
+	<li><a href="/portale/documents/20182/4905842/SchemiDAS_20200703.zip/99f1d03d-dcad-4437-8a2d-a70b27ccaa85">SchemiDAS_20200703</a></li>
+	<li><a href="/portale/documents/20182/4905842/DocumentazioneMovimentazioniDAS_vs_202007.pdf/5611f936-7f4d-4520-8920-2e4c5a63f0a0">DocumentazioneMovimentazioniDAS_vs_202007</a></li>
+	<li><a href="/portale/documents/20182/6112697/CodiciErrore_20201215.pdf/57148275-872e-4132-a5b8-2996e956e003">Tabella Codici Errore</a></li>
+	<li><a href="/portale/documents/20182/6112697/Elenco+aggiornamenti_20201216.pdf/8238d6b1-443a-4db9-9803-cd6f1ba1c822">Elenco aggiornamenti</a></li>
