@@ -113,7 +113,7 @@ cron.schedule('*/20 8-20 * * 1-5', () => {
 
 //###########################################################################################################à
 
-
+/**
 request('https://www.adm.gov.it/portale/en/das-elettronico', (error, response, html) => {
     if (!error && response.statusCode == 200) {
         const $ = cheerio.load(html);
@@ -146,7 +146,7 @@ request('https://www.adm.gov.it/portale/en/das-elettronico', (error, response, h
     console.log('Scraping Done...');
 });
 
-
+**/
 
 
 
