@@ -2,14 +2,17 @@ const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const readline = require('readline');
+const axios = require('axios');
+const xpath = require('xpath');
+const dom = require('xmldom').DOMParser;
 
 
 const TelegramBot = require('node-telegram-bot-api');
 //E-das Token
 const token = '1294134868:AAG9xJj92qzZMh_RSuU9aotkSxtSw7HTDns'
-    //Toams_prova_bot   1748123452:AAE2E9gCJWoeXyrUweYF6XM3m7jTJiOUVVg
-    // 676793933:AAFSqroVLFsRsYU1nk12-gmVWrYprDN2q-I     test2tomas
-    // 1294134868:AAG9xJj92qzZMh_RSuU9aotkSxtSw7HTDns     edas_dogane
+//Toams_prova_bot   1748123452:AAE2E9gCJWoeXyrUweYF6XM3m7jTJiOUVVg
+// 676793933:AAFSqroVLFsRsYU1nk12-gmVWrYprDN2q-I     test2tomas
+// 1294134868:AAG9xJj92qzZMh_RSuU9aotkSxtSw7HTDns     edas_dogane
 const bot = new TelegramBot(token, { polling: true });
 exports.bot = bot;
 
@@ -18,7 +21,6 @@ var cron = require('node-cron');
 
 
 const EDAS = "\ud83d\udde3 E-Das_HTML_format"
-const APRI_CANCELLO_2 = "\ud83d\udde3 Apri cancello 2"
 
 
 inline_keyboard = [];
@@ -26,12 +28,12 @@ inline_keyboard = [];
 // Here starts everything
 bot.onText(/\/start/, (msg) => {
     var telegramUser = msg.from
-        //  $.sendMessage("Utente (" + telegramUser.firstName + " " + telegramUser.lastName + ")  " + body.message)
+    //  $.sendMessage("Utente (" + telegramUser.firstName + " " + telegramUser.lastName + ")  " + body.message)
 
     // Aggiorno il file 
     const usersFile = fs.readFileSync('users.txt').toString()
     if (!usersFile.includes(msg.chat.id)) {
-        fs.writeFile('users.txt', usersFile + msg.chat.id + "\n", 'utf-8', function(err) {
+        fs.writeFile('users.txt', usersFile + msg.chat.id + "\n", 'utf-8', function (err) {
             if (err) throw err;
             console.log('UsersAsinc complete');
         });
@@ -54,16 +56,8 @@ bot.onText(/\/start/, (msg) => {
 bot.on('message', (msg) => {
 
     if (msg.text.toString() === EDAS) {
-        request('https://www.adm.gov.it/portale/dogane/operatore/servizi-online/servizio-telematico-doganale-e.d.i./web-service/webservice-ambienteprova#sez-daselettronico', (error, response, html) => {
-            if (!error && response.statusCode == 200) {
-                const $ = cheerio.load(html);
-
-                let main = $('ul').eq(5)
-
-                bot.sendMessage(msg.chat.id, main.html())
-            };
-            console.log('Scraping Done...');
-        });
+       // const fileContents = fs.readFileSync('content.txt').toString()
+        bot.sendMessage(msg.chat.id, "https://www.adm.gov.it/portale/dogane/operatore/accise/telematizzazione-delle-accise/settore-prodotti-energetici/tabelle-di-riferimento")
     } else {
         if (msg.text.toString() != "/start") {
 
@@ -92,108 +86,144 @@ cron.schedule('*/20 8-20 * * 1-5', () => {
 
     console.log('running a task every 20 minutes');
 
-
     request('https://www.adm.gov.it/portale/dogane/operatore/servizi-online/servizio-telematico-doganale-e.d.i./web-service/webservice-ambienteprova#sez-daselettronico', (error, response, html) => {
         if (!error && response.statusCode == 200) {
 
-            const $ = cheerio.load(html);
-            let main = $('ul').eq(4)
+            (async () => {
+                const response = await axios.get('https://www.adm.gov.it/portale/dogane/operatore/servizi-online/servizio-telematico-doganale-e.d.i./web-service/webservice-ambienteprova#sez-daselettronico');
+                const $ = cheerio.load(response.data);
 
-            // console.log( main.html())
+                // Use an XPath selector to get the ul element with the class "default"
+                const ulElement = xpath.select('//*[@id="portlet_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_HtVDzRCPDnG4"]/div/div[2]/div/div/div[2]/div/div/div/ul[2]', new dom().parseFromString($.html()));
+                // Use the `cheerio.load()` method to create a Cheerio instance from the first result of the XPath query
+                const $ulElement = cheerio.load(ulElement[0].toString());
+                // Use the `find()` method to get all the li elements inside the ul element
+                const liElements = $ulElement('li');
+                // Use the `map()` method to extract the HTML content of each li element
+                const liHtmls = liElements.map((index, li) => $(li).html()).get();
 
-            const fileContents = fs.readFileSync('content.txt').toString()
-                // se ci sono modifiche
-            if (fileContents.replace(/\s/g, '') !== main.html().replace(/\s/g, '')) {
-                // Send bradcast
-                var lineReader = readline.createInterface({
-                    input: require('fs').createReadStream('users.txt')
-                });
-                lineReader.on('line', function(line) {
-                    if (line !== "")
-                        bot.sendMessage(line, main.html())
-                });
 
-                // Aggiorno il file 
-                fs.writeFile('content.txt', main.html(), 'utf-8', function(err) {
-                    if (err) throw err;
-                    console.log('filelistAsync complete');
-                });
-            }
+                const ulElement1 = xpath.select('//*[@id="portlet_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_HtVDzRCPDnG4"]/div/div[2]/div/div/div[2]/div/div/div/ul[3]', new dom().parseFromString($.html()));
+                const $ulElement1 = cheerio.load(ulElement1[0].toString());
+                const liElements1 = $ulElement1('li');
+                const liHtmls1 = liElements1.map((index, li) => $(li).html()).get();
+
+                const ulElement2 = xpath.select('//*[@id="portlet_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_HtVDzRCPDnG4"]/div/div[2]/div/div/div[2]/div/div/div/ul[4]', new dom().parseFromString($.html()));
+                const $ulElement2 = cheerio.load(ulElement2[0].toString());
+                const liElements2 = $ulElement2('li');
+                const liHtmls2 = liElements2.map((index, li) => $(li).html()).get();
+
+                const fileContents = fs.readFileSync('content.txt').toString()
+                const updatedContentArray = [];
+
+                // This is the first root
+                liHtmls.forEach(x => {
+                    // se ci sono modifiche
+                    if (!fileContents.includes(x)) {
+                        // Send bradcast
+                        var lineReader = readline.createInterface({
+                            input: require('fs').createReadStream('users.txt')
+                        });
+                        lineReader.on('line', function (line) {
+                            if (line !== "")
+                                bot.sendMessage(line, x)
+                        });
+
+                        updatedContentArray.push(x);
+                    }
+                })
+                // This is the second root
+                liHtmls1.forEach(x => {
+                    // se ci sono modifiche
+                    if (!fileContents.includes(x)) {
+                        // Send bradcast
+                        var lineReader = readline.createInterface({
+                            input: require('fs').createReadStream('users.txt')
+                        });
+                        lineReader.on('line', function (line) {
+                            if (line !== "")
+                                bot.sendMessage(line, x)
+                        });
+
+                        updatedContentArray.push(x);
+                    }
+
+                })
+                // This is the third root
+                liHtmls2.forEach(x => {
+                    // se ci sono modifiche
+                    if (!fileContents.includes(x)) {
+                        // Send bradcast
+                        var lineReader = readline.createInterface({
+                            input: require('fs').createReadStream('users.txt')
+                        });
+                        lineReader.on('line', function (line) {
+                            if (line !== "")
+                                bot.sendMessage(line, x)
+                        });
+
+                        updatedContentArray.push(x);
+                    }
+
+                })
+
+                //###############################
+
+                const response1 = await axios.get('https://www.adm.gov.it/portale/dogane/operatore/accise/telematizzazione-delle-accise/settore-prodotti-energetici/tabelle-di-riferimento');
+                const $1 = cheerio.load(response1.data);
+
+                // Use an XPath selector to get the ul element with the class "default"
+                const ulElement_t = xpath.select('//*[@id="portlet_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_HtVDzRCPDnG4"]/div/div[2]/div/div/div[2]/div/div/div/ul', new dom().parseFromString($1.html()));
+                // Use the `cheerio.load()` method to create a Cheerio instance from the first result of the XPath query
+                const $ulElement_t = cheerio.load(ulElement_t[0].toString());
+                // Use the `find()` method to get all the li elements inside the ul element
+                const liElements_t = $ulElement_t('li');
+                // const liHtmls_t2 = liElements_t.map((index, li) => $(li).html()).get();
+                // console.log(liHtmls_t2);
+
+                // Use the `map()` method to extract the HTML content of each li element
+                const liHtmls_t = liElements_t.map((index, li) => {
+                    // Create a Cheerio instance from the current li element
+                    const $li = $(li);
+                    // Use the `find()` method to get all the a elements inside the current li element
+                    const aElements = $li.find('a');
+                    // Use the `map()` method to extract the HTML content of each a element
+                    const aHtmls = aElements.map((index, a) => $.html(a)).get();
+
+                    // Return the a HTML content as a string
+                    return aHtmls.join('');
+                }).get();
+
+                // console.log(liHtmls_t);
+
+                // This is the first root
+                liHtmls_t.forEach(x => {
+                    // se ci sono modifiche
+                    if (!fileContents.includes(x)) {
+                        // Send bradcast
+                        var lineReader = readline.createInterface({
+                            input: require('fs').createReadStream('users.txt')
+                        });
+                        lineReader.on('line', function (line) {
+                            if (line !== "")
+                                bot.sendMessage(line, x)
+                        });
+                        updatedContentArray.push(x);
+                    }
+                })
+                // Write the final array
+                if (updatedContentArray.length > 0) {
+                    const updatedContent = fileContents + '\n' + updatedContentArray.join('\n');
+                    fs.writeFile('content.txt', updatedContent, 'utf-8', function (err) {
+                        if (err) throw err;
+                    });
+                }
+
+            })();
+
         } else
             bot.sendMessage(145645559, "Controlla il Link delle Dogane")
     })
-
-
-
-
-    request('https://www.adm.gov.it/portale/dogane/operatore/accise/telematizzazione-delle-accise/settore-prodotti-energetici/tabelle-di-riferimento', (error, response, html) => {
-        if (!error && response.statusCode == 200) {
-            const $ = cheerio.load(html);
-            let main = $('.journal-content-article')
-                //  console.log( main.html().replace(/\s/g, ''))
-            const fileContents = fs.readFileSync('tabella_energetici.txt').toString()
-                // se ci sono modifiche
-            if (fileContents.replace(/\s/g, '') !== main.html().replace(/\s/g, '')) {
-                // Send bradcast
-                var lineReader = readline.createInterface({
-                    input: require('fs').createReadStream('users.txt')
-                });
-                lineReader.on('line', function(line) {
-                    if (line !== "")
-                        bot.sendMessage(line, 'https://www.adm.gov.it/portale/dogane/operatore/accise/telematizzazione-delle-accise/settore-prodotti-energetici/tabelle-di-riferimento')
-                });
-
-                // Aggiorno il file 
-                fs.writeFile('tabella_energetici.txt', main.html().replace(/\s/g, ''), 'utf-8', function(err) {
-                    if (err) throw err;
-                    console.log('filelistAsync complete');
-                });
-            }
-
-        } else
-            bot.sendMessage(145645559, "Controlla il Link delle Dogane")
-    })
-
-
-
-    //###########################################################################################################à
-
-    /**
-    request('https://www.adm.gov.it/portale/en/das-elettronico', (error, response, html) => {
-        if (!error && response.statusCode == 200) {
-            const $ = cheerio.load(html);
-
-            let main = $('.journal-content-article')
-
-            const home_content = fs.readFileSync('CONTAINER//home_content.txt').toString()
-
-            // se ci sono modifiche
-            if (home_content.replace(/\s/g, '') !== main.html().replace(/\s/g, '')) {
-                // Send bradcast
-                var lineReader = readline.createInterface({
-                    input: require('fs').createReadStream('users.txt')
-                });
-                lineReader.on('line', function (line) {
-                    if (line !== "")
-                        bot.sendMessage(line, main.text())
-                });
-
-                // Aggiorno il file 
-                fs.writeFile('CONTAINER//home_content.txt', main.html().replace(/\s/g, ''), 'utf-8', function (err) {
-                    if (err) throw err;
-                    console.log('filelistAsync complete');
-                });
-            }
-            //     console.log(main.html().replace(/\s/g, ''))
-        }
-        else
-            bot.sendMessage(145645559, "Controlla il Link delle Dogane")
-        console.log('Scraping Done...');
-    });
-
-    **/
-
-
 
 
 });

@@ -1,7 +1,37 @@
-
-	<li><a href="/portale/documents/20182/6112697/DAS_Tracciati_20201216.zip/a662bbff-695e-481c-84fe-a3d87753dde5">DASTracciati_20200723</a></li>
-	<li><a href="/portale/documents/20182/4905842/wsdl.zip/17bf2db5-67ed-4207-9150-a0a338aa8daf">wsdl</a></li>
-	<li><a href="/portale/documents/20182/4905842/SchemiDAS_20200703.zip/99f1d03d-dcad-4437-8a2d-a70b27ccaa85">SchemiDAS_20200703</a></li>
-	<li><a href="/portale/documents/20182/4905842/DocumentazioneMovimentazioniDAS_vs_202007.pdf/5611f936-7f4d-4520-8920-2e4c5a63f0a0">DocumentazioneMovimentazioniDAS_vs_202007</a></li>
-	<li><a href="/portale/documents/20182/6112697/CodiciErrore_20201215.pdf/57148275-872e-4132-a5b8-2996e956e003">Tabella Codici Errore</a></li>
-	<li><a href="/portale/documents/20182/6112697/Elenco+aggiornamenti_20201216.pdf/8238d6b1-443a-4db9-9803-cd6f1ba1c822">Elenco aggiornamenti</a></li>
+<a href="/portale/documents/20182/51074397/xsd-DistributoriCarburanti_09-06-2022.zip/16dcb166-a16e-5909-86b6-baa76a81a3f8?t=1654780747071">xsd-DistributoriCarburanti Prova (aggiornato al 09/06/2022)</a>
+<a href="/portale/documents/20182/8113843/Manuale+Utente+Distributori+Carburante+%28aggiornato+al+29-10-2021%29.pdf/24e1d602-f104-beeb-7ce2-fc77d37227b6?t=1635511202390">Manuale Utente Distributori Carburante</a> - (pubblicato il 15/04/2020 - aggiornato il 29/10/2021)
+<a href="/portale/documents/20182/2826878/wsdlContabilitaDistributoriCarburanti.zip/98409fa7-3b07-4384-82e4-58352be49494">wsdl - Contabilità&amp;nbsp;Distributori Carburanti</a>
+<a href="/portale/documents/20182/2826878/InteropService.wsdl/18da647f-4570-4f9e-8d7e-4c23c27a8435">InteropService.wsdl</a>
+<a href="/portale/documents/20182/2826878/InteropRService.yaml/294a2d5e-6c95-420d-a53a-aaca40828d96">InteropRService.yaml</a>
+<a href="/portale/documents/20182/2826878/InteropRService.pdf/8e8f2458-32e2-4f99-a392-85bdaffa00f3">InteropRService.pdf</a>
+<a href="/portale/documents/20182/5284863/Annullamento+Distributori+carburanti_20191031.pdf/6d752d47-dc90-4ac4-86e6-af419929e643">Annullamento Distributori carburanti_20191031 (aggiornato 31.10.2019)</a>
+<a href="/portale/documents/20182/5284863/File+di+Esito_20191031.pdf/7e2b73ff-47da-4265-982a-18283fcc2e00">File di Esito_20191031 (aggiornato 31.10.2019)</a>
+<a href="https://www.agenziadoganemonopoli.gov.it/portale/documents/20182/2826878/Tabella+Codici+Errore+-+Segnalazione+-+Esito+Generale.pdf/2aa7b647-def9-45d3-9d82-9a70a3d4d1a1">Tabella Codici Errore - Segnalazione - Esito Generale</a>
+<a href="/portale/documents/20182/8113843/Tabella+Codici+Errori+-+Segnalazioni+-+Dettaglio+file+di+Esito+-+pdf+%28aggiornato+al+29-10-2021%29.pdf/6d9b38f4-32b2-f4f3-c521-6a560b9596dc?t=1635511203825">Tabella Codici Errori - Segnalazioni - Dettaglio file di Esito (aggiornato al 29/10/2020)</a>
+<a href="/portale/documents/20182/8113843/DAS_Tracciati_31.01.2023.zip/86645a39-9bfe-e7bc-5037-07c821bcf73c?t=1675180938092">DAS tracciati 31/01/2023</a>
+<a href="/portale/documents/20182/4905842/wsdl.zip/17bf2db5-67ed-4207-9150-a0a338aa8daf">wsdl</a>
+<a href="/portale/documents/20182/8113843/Schemi_DAS_20220930.zip/9394f626-1e14-e19e-185d-92ab6fb0eb61?t=1664551556585">SchemiDAS 31/01/2023</a>
+<a href="/portale/documents/20182/8113843/TabellaCodiciErrore_20220818.pdf/e7fb8af3-e684-0c57-9e2a-a185f5b1abd2?t=1661252520109">Tabella Codici Errore</a>
+<a href="/portale/documents/20182/8113843/Elenco+aggiornamenti_20220930.pdf/928ee0b1-842f-0a77-8ce3-1b077986044c?t=1664551555204">Elenco aggiornamenti</a>
+<a href="/portale/documents/20182/8113843/DocumentazioneMovimentazioniDAS_vs_05072022.pdf/74bc708a-c424-b522-9176-493666a637ca?t=1657182895504">Manuale operativo DAS</a>
+<a href="/portale/documents/20182/6112697/richiediListaDAS.pdf/3f81794e-cb54-2859-199c-cef58b10e5ab?t=1642590174158">Descrizione messaggio richiediListaDAS</a>
+<a href="/portale/documents/20182/88102692/SchemiEMCS_20230202.zip/45bb0dc0-0ca2-55ac-78ce-6a5bf210ad32?t=1675423807305">Gli schemi (xsd) dei messaggi - Documento elettronico</a> - (aggiornati al 02/02/2023)
+<a href="/portale/documents/20182/88102692/Manuale_operativo_e-AD_e-DAS_addestramento_13122022.pdf/923b4e4c-080e-28f5-cac5-a7f4d4bdd971?t=1671445488986">Manuale operativo - Documento elettronico</a>
+<a href="/portale/documents/20182/1289409/20151022-Prova-DAA.wsdl/18140172-dbf4-46ae-a9fe-ddbc7f6b2b74">wsdl - Documento elettronico - wsdl</a>
+<a aria-label="Scarica il documento TA01 - Tabella tipi richiesta" href="/portale/documents/20182/886385/ta01_tabella_tipi_richiesta.xls/3a770641-5aee-4445-bbff-a82cc48f1e74?t=1459339228859">TA01 - Tabella tipi richiesta</a>
+<a aria-label="Scarica il documento TA02 - Tabella tipi registro prodotti energetici" href="/portale/documents/20182/886385/TA02-Tabella_tipi_registro_PE.xlsx/5413f7e8-01d2-4119-b159-7133f846461e?t=1610546824663">TA02 - Tabella tipi registro prodotti energetici</a>
+<a aria-label="Scarica il documento TA03 - Tabella Codici Ufficio" href="/portale/documents/20182/6634674/TA03_tabella_uffici_08_2021.xlsx/bb8e863f-00f8-e0fb-768d-4756db89f47e?t=1628516841983">TA03 - Tabella Codici Ufficio</a>
+<a aria-label="Scarica il documento TA04 - Tabella tipi stoccaggio prodotti energetici" href="/portale/documents/20182/886385/ta04_tabella_tipi_stoccaggio.xls/5140c4dd-67bc-4efa-a2ab-f5ebbd9b030d?t=1459339263903">TA04 - Tabella tipi stoccaggio prodotti energetici</a>
+<a aria-label="Scarica il documento TA05 - Tabella tipi documento" href="/portale/documents/20182/886385/TA05-+Tabella+Tipi+documento_PE.xls/dbe9c309-442d-40fa-993c-0b2558ad07e2?t=1653651423290">TA05 - Tabella tipi documento</a>
+<a aria-label="Scarica il documento TA06 - Tabella Paesi" href="/portale/documents/20182/7255969/TA06_tabella_paesi+2021.xls/f6909397-12a6-4018-80f9-157f2c542dff?t=1616516624448">TA06 - Tabella Paesi</a>
+<a aria-label="Scarica il documento TA07 - Tabella tipi movimentazione" href="/portale/documents/20182/886385/ta07_tabella_tipi_movimentazione.xls/19d50ba4-a4ab-4f45-af68-7871df9cd4f2?t=1459339281697">TA07 - Tabella tipi movimentazione</a>
+<a aria-label="Scarica il documento TA08 (C) - Tabella causali di carico" href="/portale/documents/20182/886385/TA08_C-Tabella_Causali_movimentazione_Carico_24lug2013.xls/4da7e2f1-2bde-44e9-a781-f23680ef1bd2?t=1459339105202">TA08 (C) - Tabella causali di carico</a>
+<a aria-label="Scarica il documento TA08 (S) - Tabella Causali di movimentazione" href="/portale/documents/20182/886385/TA08_S-Tabella_Causali_movimentazione_Scarico_24lug2013.xls/ed7adc26-52f2-4b74-9e92-4eb9357929b4?t=1459339123009">TA08 (S) - Tabella Causali di movimentazione</a>
+<a aria-label="Scarica il documento TA09 - Tabella periodi movimentazione di imposta" href="/portale/documents/20182/886385/TA09+-+Tabella+Periodi+movimentazione+di+imposta.xls/2baa3ead-eddc-4f3a-907a-13ad24d60943?t=1459339142852">TA09 - Tabella periodi movimentazione di imposta</a>
+<a aria-label="Scarica il documento TA10 - Tabella tributi prodotti energetici" href="/portale/documents/20182/886385/TA10_tabella_tributi.xls/6392725b-4be0-4ca3-a3cd-3328e61ab9ca?t=1459339160122">TA10 - Tabella tributi prodotti energetici</a>
+<a aria-label="Scarica il documento TA11 - Tabella tipi garanzia prodotti energetici" href="/portale/documents/20182/886385/ta11_tabella_tipi_garanzia.xls/2e015a81-ea39-4b64-95a3-208beee22df3?t=1459339299738">TA11 - Tabella tipi garanzia prodotti energetici</a>
+<a aria-label="Scarica il documento TA12 - Tabella posizioni fiscali" href="/portale/documents/20182/886385/TA12_tabella_posizioni_fiscali_20130807.xls/a1834d1e-fbfb-46f2-8fc2-780ad9453c43?t=1459339176536">TA12 - Tabella posizioni fiscali</a>
+<a aria-label="Scarica il documento TA13 - Tabella Prodotti energetici" href="/portale/documents/20182/6634674/TA13+20220809.xlsx/a9b9cadd-6d43-e313-9c52-c92bed1c2a16?t=1670947103463">TA13 - Tabella Prodotti energetici</a>
+<a aria-label="Scarica il documento TA17 - Tabella dei tipi record" href="/portale/documents/20182/886385/ta17_tabella_tipi_record.xls/fb8a8462-556c-4873-871e-b4e4bd2db5cc?t=1459339317328">TA17 - Tabella dei tipi record</a>
+<a aria-label="Scarica il documento TA26 - Tabella errori e segnalazioni prodotti energetici - xls - aggiornata al 17/12/2020" href="/portale/documents/20182/886385/TA26_17_09_2020+validazionevq.xls/98d9bb2f-3560-4e1e-8a2f-23764053d4ec?t=1608203937327">TA26 - Tabella errori e segnalazioni prodotti energetici - xls - aggiornata al 17/12/2020</a>
+<a aria-label="Scarica il documento TA27 - Tabella contingenti biodiesel" href="/portale/documents/20182/886385/ta27_tabella_contingenti_biodiesel.xls/fc6a974b-921b-4658-8899-c18dfa7d0c8b?t=1459339338335">TA27 - Tabella contingenti biodiesel</a>
